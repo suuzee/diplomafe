@@ -1,0 +1,1 @@
+<div class="item" data-value="{{tag_id}}"></i>{{tag_name}}</div>

@@ -1,0 +1,20 @@
+<div class="ui dividing right rail">
+    <div class="ui basic segment">
+        <div class="ui small header">
+            热门问题
+        </div>
+        <div class="ui list">
+            <a class="item">Who is our user?</a>
+            <a class="item">Who is our user?</a>
+            <a class="item">Who is our user?</a>
+            <a class="item">Where is our office located?</a>
+        </div>
+    </div>
+    <div class="ui basic segment">
+        <div class="ui celled horizontal list">
+            <a href="#" class="item">关于知否</a>
+            <a href="#" class="item">联系我们</a>
+            <div class="item">Copyright&copy;2016</div>
+        </div>
+    </div>
+</div>

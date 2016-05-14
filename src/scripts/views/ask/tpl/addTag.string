@@ -1,0 +1,5 @@
+<div class="ui right labeled left icon input js-create-tag-container">
+    <i class="tags icon"></i>
+    <input type="text" name="new-tag" placeholder="创建新的标签">
+    <a class="ui tag label js-create-tag">创建</a>
+</div>

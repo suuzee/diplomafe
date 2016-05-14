@@ -1,0 +1,17 @@
+<div class="ui form user-form js-ask-form">
+    <div class="field">
+        <label>标题</label>
+        <input type="text" name="title" placeholder="标题">
+    </div>
+    <div class="field">
+        <label>描述</label>
+        <textarea name="description" class="js-editor" placeholder="描述"></textarea>
+    </div>
+    <div class="field">
+        <label>标签</label>
+        <select name="tags" multiple="" class="ui fluid dropdown js-select-tags">
+            <option value="">选择标签</option>
+        </select>
+    </div>
+    <button class="ui button js-ask" type="submit">提问</button>
+</div>

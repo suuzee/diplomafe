@@ -1,0 +1,29 @@
+<div class="ui list question-list">
+    {{#data}}
+    <div class="item">
+        <div class="ui tiny header">
+            <img class="ui avatar image" src="{{avatar}}">
+            <div class="content">
+                <a class="header">{{author}}</a>
+                <div class="description">提出了问题：</div>
+            </div>
+        </div>
+        <div class="ui segment">
+            <a href="/diploma/question/{{id}}" class="ui header">{{title}}</a>
+            <p>{{content}}</p>
+        </div>
+        <div class="ui tiny header">
+            <div class="ui horizontal list">
+                <div href="#" class="item">
+                    <i class="unhide icon"></i>
+                    {{lookNum}}人查看
+                </div>
+                <div href="#" class="item">
+                    <i class="comment outline icon"></i>
+                    {{answerNum}}个回答
+                </div>
+            </div>
+        </div>
+    </div>
+    {{/data}}
+</div>
