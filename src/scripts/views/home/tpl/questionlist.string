@@ -1,16 +1,16 @@
 <div class="ui list question-list">
-    {{#data}}
+    {{#questions}}
     <div class="item">
         <div class="ui tiny header">
-            <img class="ui avatar image" src="{{avatar}}">
+            <img class="ui avatar image" src="{{user_avatar}}">
             <div class="content">
-                <a class="header">{{author}}</a>
+                <a href="/diploma/welcome/i/{{question_author}}" class="header">{{user_name}}</a>
                 <div class="description">提出了问题：</div>
             </div>
         </div>
         <div class="ui segment">
-            <a href="/diploma/question/{{id}}" class="ui header">{{title}}</a>
-            <p>{{content}}</p>
+            <a href="/diploma/welcome/question/{{question_id}}" class="ui header">{{question_title}}</a>
+            <p>{{{question_desc}}}</p>
         </div>
         <div class="ui tiny header">
             <div class="ui horizontal list">
@@ -22,8 +22,15 @@
                     <i class="comment outline icon"></i>
                     {{answerNum}}个回答
                 </div>
+                <div class="item tags">
+                    {{#question_tags}}
+                    <a href="/diploma/welcome/tag/{{tag_id}}" class="ui label tag">
+                        {{tag_name}}
+                    </a>
+                    {{/question_tags}}
+                </div>
             </div>
         </div>
     </div>
-    {{/data}}
+    {{/questions}}
 </div>

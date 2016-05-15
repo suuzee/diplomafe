@@ -10,7 +10,7 @@
                     </div>
                 </div>
             </div>
-            <a class="view-ui item">知否</a>
+            <a href="index" class="view-ui item">知否</a>
             <div class="item">
                 <div class="ui icon input">
                     <input type="text" placeholder="搜索你要的问题">

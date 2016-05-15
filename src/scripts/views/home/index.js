@@ -7,30 +7,6 @@ var utils = require("Utils/index");
 
 
 var Home = {
-    loadData: function (url, callback, container) {
-        var self = this;
-        container && $(container).addClass('loading');
-        $.ajax({
-            url: url,
-            dataType: 'json',
-            contentType: 'application/json;charset=UTF-8',
-            method: 'get',
-            data: {}
-        }).done(function (res) {
-            var data = !!res.data ? res.data : {};
-            if (res.status !== 0) {
-                alert('加载失败:' + res.message);
-                return false;
-            } else {
-                callback && callback(data);
-            }
-        }).fail(function () {
-            alert("加载失败");
-        }).always(function () {
-            // ...
-            container && $(container).removeClass('loading');
-        });
-    },
     renderIndex: function () {
         var self = this;
 
@@ -52,13 +28,17 @@ var Home = {
         var self = this,
             container = '.js-qlist-container';
 
-        self.loadData('/diploma/question/getQuestionList', function (data) {
-            var template = Hogan.compile(qListStr),
-                outputHtml = template.render({
-                data: data
-            });
-            $(container).append(outputHtml);
-        }, container);
+        utils.loadData({
+            url: '/diploma/question/getQuestions',
+            callback: function (data) {
+                utils.renderWidget({
+                    container: container,
+                    tpl: qListStr,
+                    data: data
+                });
+            },
+            container: container
+        });
     },
     renderPage: function () {
         var self = this;
