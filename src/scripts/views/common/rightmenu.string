@@ -13,7 +13,7 @@
     <div class="ui basic segment">
         <div class="ui celled horizontal list">
             <a href="#" class="item">关于知否</a>
-            <a href="#" class="item">联系我们</a>
+            <a href="mailto:ze.su@qunar.com" class="item">联系我们</a>
             <div class="item">Copyright&copy;2016</div>
         </div>
     </div>

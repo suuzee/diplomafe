@@ -1,0 +1,44 @@
+<div class="answer-list">
+    {{#answers}}
+    <div class="item answer-item js-answer-{{answer_id}}" data-id="{{answer_id}}">
+        <div class="ui tiny header">
+            <img class="ui avatar image" src="{{user_avatar}}">
+            <div class="content">
+                <a href="/diploma/i/{{question_author}}" class="header">{{user_name}}</a>
+                <span class="user-detail">{{user_desc}}</span>
+                <div class="description">做出了回答：</div>
+            </div>
+        </div>
+        <div class="ui segment">
+            <p>{{{answer_desc}}}</p>
+        </div>
+        <div class="ui tiny header">
+            <div class="ui horizontal list">
+                <div class="item">
+                    {{answer_date}}
+                </div>
+                <div class="item like">
+                    <div class="ui labeled button" tabindex="0">
+                        <div class="ui red {{isLike}} button js-like">
+                            <i class="heart icon"></i> 赞
+                        </div>
+                        <a class="ui basic red {{isLike}} left pointing label">
+                            {{likeNum}}
+                        </a>
+                    </div>
+                </div>
+                <div href="#" class="item">
+                    <div class="ui labeled button" tabindex="0">
+                        <div class="ui teal button js-comment">
+                            <i class="comment outline icon"></i> 评论
+                        </div>
+                        <a class="ui basic teal left pointing label js-comment-num-{{answer_id}}">
+                            {{commentNum}}
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    {{/answers}}
+</div>

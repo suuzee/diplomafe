@@ -1,5 +1,5 @@
 <div class="question-list">
-    {{#questions}}
+    {{#question}}
     <div class="item">
         <div class="ui tiny header">
             <img class="ui avatar image" src="{{user_avatar}}">
@@ -36,5 +36,5 @@
             </div>
         </div>
     </div>
-    {{/questions}}
+    {{/question}}
 </div>

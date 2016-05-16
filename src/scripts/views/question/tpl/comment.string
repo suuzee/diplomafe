@@ -1,0 +1,16 @@
+{{#comments}}
+<div class="comment js-comment-{{comment_id}}">
+    <a class="avatar">
+        <img src="{{user_avatar}}">
+    </a>
+    <div class="content">
+        <a class="author">{{user_name}}</a>
+        <div class="metadata">
+            <span class="date">{{comment_date}}</span>
+        </div>
+        <div class="text">
+            {{comment_desc}}
+        </div>
+    </div>
+</div>
+{{/comments}}

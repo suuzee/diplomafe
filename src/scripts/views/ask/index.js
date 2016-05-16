@@ -73,7 +73,6 @@ var Ask = {
             url: '/diploma/tag/getTags',
             container: container,
             callback: function (data) {
-                debugger;
                 var i = 0, len = data.length;
                 for (; i < len; i ++) {
                     utils.renderWidget({

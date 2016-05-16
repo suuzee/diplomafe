@@ -3110,6 +3110,7 @@ code .chunk {
 }
 
 .question-list,
+.answer-list,
 .user-form {
     max-width: 800px !important;
 }
@@ -3119,4 +3120,8 @@ code .chunk {
 
 .question-list .item.tags .tag {
     margin-left: 15px;
+}
+
+.answer-item {
+    margin-bottom: 20px;
 }

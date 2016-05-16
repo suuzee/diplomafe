@@ -48,7 +48,7 @@ var Regist = {
             data = $(container).form('get values');
         self.loadData('/diploma/user/doRegister', data, function (data) {
             alert(data.message);
-            window.location.href = 'welcome/login';
+            window.location.href = '/diploma/login';
         }, container, 'post');
     },
     renderIndex: function () {

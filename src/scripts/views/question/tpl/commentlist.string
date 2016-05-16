@@ -1,0 +1,16 @@
+<div class="ui modal js-comment-modal">
+    <div class="header">
+        评论列表
+    </div>
+    <div class="content">
+        <div class="ui comments js-comments-container"></div>
+        <div class="ui reply form js-comment-form">
+            <div class="field">
+                <textarea rows="2" name="commentDesc"></textarea>
+            </div>
+            <div class="ui blue labeled submit icon button js-comment">
+                <i class="icon edit"></i> 发表评论
+            </div>
+        </div>
+    </div>
+</div>

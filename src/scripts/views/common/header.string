@@ -10,7 +10,7 @@
                     </div>
                 </div>
             </div>
-            <a href="index" class="view-ui item">知否</a>
+            <a href="/diploma" class="view-ui item">知否</a>
             <div class="item">
                 <div class="ui icon input">
                     <input type="text" placeholder="搜索你要的问题">
@@ -20,18 +20,18 @@
             <div class="right menu">
                 {{#noLogin}}
                 <div class="item">
-                    <a href='/diploma/welcome/register' class="ui button red">注册</a>
-                    <a href='/diploma/welcome/login' class="ui button green">登陆</a>
+                    <a href='/diploma/register' class="ui button red">注册</a>
+                    <a href='/diploma/login' class="ui button green">登陆</a>
                 </div>
                 {{/noLogin}}
                 {{#loginUser}}
                 <div class="item">
-                    <a href='/diploma/welcome/ask' class="ui button blue">提问</a>
+                    <a href='/diploma/ask' class="ui button blue">提问</a>
                     <div class="ui floating labeled icon dropdown button green js-user-menu">
                         <i class="user icon"></i>
                         <span class="text">{{user_name}}</span>
                         <div class="menu">
-                            <a href="/diploma/welcome/i" class="item">个人中心</a>
+                            <a href="/diploma/i" class="item">个人中心</a>
                             <a href="/diploma/user/logout" class="item js-logout">退出</a>
                         </div>
                     </div>
