@@ -1,0 +1,18 @@
+<div class="ui card spical">
+    <div class="content">
+        {{user_name}}
+    </div>
+    <div class="blurring dimmable image">
+        <div class="ui dimmer">
+            <div class="content">
+                <div class="center">
+                    <div class="ui inverted button js-avatar">更换头像</div>
+                </div>
+            </div>
+        </div>
+        <img src="{{user_avatar}}">
+    </div>
+    <div class="content">
+        {{user_desc}}
+    </div>
+</div>

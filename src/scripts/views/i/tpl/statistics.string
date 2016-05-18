@@ -1,0 +1,35 @@
+<div class="ui horizontal statistics">
+    <div class="statistic ui segment">
+        <div class="label">
+            提出了
+        </div>
+        <div class="value">
+            {{userQuestion}}
+        </div>
+        <div class="label">
+            个问题
+        </div>
+    </div>
+    <div class="statistic ui segment">
+        <div class="label">
+            回答了
+        </div>
+        <div class="value">
+            {{userAnswer}}
+        </div>
+        <div class="label">
+            个问题
+        </div>
+    </div>
+    <div class="statistic ui segment">
+        <div class="label">
+            送出了
+        </div>
+        <div class="value">
+            {{userLike}}
+        </div>
+        <div class="label">
+            个赞
+        </div>
+    </div>
+</div>

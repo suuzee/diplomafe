@@ -1,0 +1,20 @@
+<div id="example" class="index">
+<div class="pusher">
+    <div class="full height">
+        <div class="js-head-container ui basic segment"></div>
+        <div class="ui main container">
+            <div class="js-myself-container ui basic segment">
+                <div class="myself">
+                    <div class="ui grid">
+                        <div class="row">
+                            <div class="six wide column js-user-container"></div>
+                            <div class="ten wide column js-statistics-container"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="js-rmenu-container"></div>
+        </div>
+    </div>
+</div>
+</div>

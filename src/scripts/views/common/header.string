@@ -31,7 +31,7 @@
                         <i class="user icon"></i>
                         <span class="text">{{user_name}}</span>
                         <div class="menu">
-                            <a href="/diploma/i" class="item">个人中心</a>
+                            <a href="/diploma/i/{{user_id}}" class="item">个人中心</a>
                             <a href="/diploma/user/logout" class="item js-logout">退出</a>
                         </div>
                     </div>
