@@ -29,6 +29,18 @@ var Question = {
             self.comment.call(self, $(this), e);
         });
     },
+    look: function () {
+        var self = this,
+            questionId = utils.getPathParam();
+        self.storage = !!self.storage ? self.storage : {};
+        self.storage.questionId = questionId;
+        utils.loadData({
+            url: '/diploma/question/addLook',
+            data: {
+                questionId: questionId
+            }
+        });
+    },
     comment: function (target, e) {
         var self = this,
             answerId = self.storage.answerId,
@@ -203,6 +215,7 @@ var Question = {
         self.renderQuestion();
         self.renderAnswers();
         self.renderComments();
+        self.look();
     },
     render: function () {
         var self = this;
