@@ -17,6 +17,10 @@ var Home = {
         $('.js-cancel-collect').on('click', function (e) {
             utils.cancelCollect.call(self, $(this), e);
         });
+
+        $('.js-informq').on('click', function (e) {
+            utils.informq.call(self, $(this), e);
+        });
     },
     renderIndex: function () {
         var self = this;

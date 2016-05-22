@@ -7,6 +7,9 @@ var getPathParam = require('./getPathParam.js');
 var searchToJson = require('./searchToJson.js');
 var collect = require('./collect.js');
 var cancelCollect = require('./cancelCollect.js');
+var informq = require('./informq.js');
+var informa = require('./informa.js');
+var checkEmail = require('./checkEmail.js');
 
 module.exports = {
     checkLogin: checkLogin,
@@ -17,5 +20,8 @@ module.exports = {
     getPathParam: getPathParam,
     searchToJson: searchToJson,
     collect: collect,
-    cancelCollect: cancelCollect
+    cancelCollect: cancelCollect,
+    informq: informq,
+    informa: informa,
+    checkEmail: checkEmail
 };

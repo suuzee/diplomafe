@@ -13,43 +13,39 @@ var Regist = {
             self.doRegister.call(self);
         });
     },
-    loadData: function (url, data, callback, container, method) {
-        var self = this;
-        data = !!data ? data : {};
-        container && $(container).addClass('loading');
-        method = !!method ? method : 'get';
-        contentType = !!(method === 'post')
-                    ? 'application/x-www-form-urlencoded'
-                    : 'application/json;charset=UTF-8';
-        $.ajax({
-            url: url,
-            dataType: 'json',
-            contentType: contentType,
-            method: method,
-            data: data
-        }).done(function (res) {
-            var data = !!res.data ? res.data : {};
-            if (res.status !== 0) {
-                alert('加载失败: ' + res.message);
-                return false;
-            } else {
-                callback && callback(data);
-            }
-        }).fail(function (a, b, c) {
-            alert("加载失败: " + c);
-        }).always(function () {
-            // ...
-            container && $(container).removeClass('loading');
-        });
-    },
     doRegister: function (e) {
         var self = this,
             container = '.js-register-form';
-            data = $(container).form('get values');
-        self.loadData('/diploma/user/doRegister', data, function (data) {
-            alert(data.message);
-            window.location.href = '/diploma/login';
-        }, container, 'post');
+        var data = $(container).form('get values');
+        if (data.password !== data.password2) {
+            alert('两次密码输入不一致');
+        } else if (utils.checkEmail(data.email) === false) {
+            alert('不正确的邮箱格式');
+        } else {
+            // 检测有没有重复的
+            utils.loadData({
+                url: '/diploma/user/checkEmail',
+                data: {
+                    email: data.email
+                },
+                callback: function (info) {
+                    if (info.message === 'success') {
+                        utils.loadData({
+                            url: '/diploma/user/doRegister',
+                            data: data,
+                            callback: function (info) {
+                                alert(info.message);
+                                window.location.href = '/diploma/login';
+                            },
+                            container: container,
+                            method: 'post'
+                        });
+                    } else {
+                        alert('系统中已存在该账号');
+                    }
+                }
+            });
+        }
     },
     renderIndex: function () {
         var self = this;

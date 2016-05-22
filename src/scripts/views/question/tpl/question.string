@@ -24,6 +24,9 @@
                     {{/isCollect}}
                 </div>
                 <div class="item">
+                    <div class="ui button js-informq {{isInformq}}" data-id="{{question_id}}">举报</div>
+                </div>
+                <div class="item">
                     {{question_date}}
                 </div>
                 <div href="#" class="item">

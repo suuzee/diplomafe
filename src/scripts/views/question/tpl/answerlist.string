@@ -15,6 +15,9 @@
         <div class="ui tiny header">
             <div class="ui horizontal list">
                 <div class="item">
+                    <div class="ui button js-informa {{isInforma}}" data-id="{{answer_id}}">举报</div>
+                </div>
+                <div class="item">
                     {{answer_date}}
                 </div>
                 <div class="item like">

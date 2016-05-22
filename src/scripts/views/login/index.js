@@ -13,43 +13,20 @@ var Login = {
             self.doLogin.call(self);
         });
     },
-    loadData: function (url, data, callback, container, method) {
-        var self = this;
-        data = !!data ? data : {};
-        container && $(container).addClass('loading');
-        method = !!method ? method : 'get';
-        contentType = !!(method === 'post')
-                    ? 'application/x-www-form-urlencoded'
-                    : 'application/json;charset=UTF-8';
-        $.ajax({
-            url: url,
-            dataType: 'json',
-            contentType: contentType,
-            method: method,
-            data: data
-        }).done(function (res) {
-            var data = !!res.data ? res.data : {};
-            if (res.status !== 0) {
-                alert('加载失败: ' + res.message);
-                return false;
-            } else {
-                callback && callback(data);
-            }
-        }).fail(function (a, b, c) {
-            alert("加载失败: " + c);
-        }).always(function () {
-            // ...
-            container && $(container).removeClass('loading');
-        });
-    },
     doLogin: function (e) {
         var self = this,
             container = '.js-login-form';
             data = $(container).form('get values');
-        self.loadData('/diploma/user/doLogin', data, function (data) {
-            window.localStorage.setItem('login_user', JSON.stringify(data));
-            window.location.href = '/diploma';
-        }, container, 'post');
+        utils.loadData({
+            url: '/diploma/user/doLogin',
+            data: data,
+            callback: function (data) {
+                window.localStorage.setItem('login_user', JSON.stringify(data));
+                window.location.href = '/diploma';
+            },
+            container: container,
+            method: 'post'
+        });
     },
     renderIndex: function () {
         var self = this;

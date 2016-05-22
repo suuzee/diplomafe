@@ -28,6 +28,22 @@ var Question = {
         $('.js-comment').on('click', function (e) {
             self.comment.call(self, $(this), e);
         });
+
+        $('.js-collect').on('click', function (e) {
+            utils.collect.call(self, $(this), e);
+        });
+
+        $('.js-cancel-collect').on('click', function (e) {
+            utils.cancelCollect.call(self, $(this), e);
+        });
+
+        $('.js-informq').on('click', function (e) {
+            utils.informq.call(self, $(this), e);
+        });
+
+        $('.js-informa').on('click', function (e) {
+            utils.informa.call(self, $(this), e);
+        });
     },
     look: function () {
         var self = this,
@@ -195,6 +211,7 @@ var Question = {
                     tpl: alistStr,
                     data: data
                 });
+                self.addEvents();
             },
             container: container
         });
@@ -221,7 +238,6 @@ var Question = {
         var self = this;
         self.renderPage();
         self.initWidgets();
-        self.addEvents();
     }
 };
 

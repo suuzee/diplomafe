@@ -29,6 +29,9 @@
                     {{/isCollect}}
                 </div>
                 <div class="item">
+                    <div class="ui button js-informq {{isInformq}}" data-id="{{question_id}}">举报</div>
+                </div>
+                <div class="item">
                     {{question_date}}
                 </div>
                 <div href="#" class="item">
@@ -77,6 +80,9 @@
                     {{/isCollect}}
                 </div>
                 <div class="item">
+                    <div class="ui button js-informq {{isInformq}}" data-id="{{question_id}}">举报</div>
+                </div>
+                <div class="item">
                     {{question_date}}
                 </div>
                 <div href="#" class="item">
@@ -123,6 +129,9 @@
                     {{#isCollect}}
                     <div class="ui button js-cancel-collect" data-id="{{question_id}}">取消收藏</div>
                     {{/isCollect}}
+                </div>
+                <div class="item">
+                    <div class="ui button js-informq {{isInformq}}" data-id="{{question_id}}">举报</div>
                 </div>
                 <div class="item">
                     {{question_date}}
