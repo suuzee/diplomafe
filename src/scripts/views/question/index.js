@@ -170,7 +170,7 @@ var Question = {
                 questionId: questionId
             },
             callback: function (data) {
-                document.title = data.question.question_title;
+                document.title = data.question.question_title + '-知否';
                 utils.renderWidget({
                     container: container,
                     tpl: qusetionStr,

@@ -9,6 +9,17 @@ var utils = require("Utils/index");
 
 
 var I = {
+    addEvents: function () {
+        var self = this;
+
+        $('.js-collect').on('click', function (e) {
+            utils.collect.call(self, $(this), e);
+        });
+
+        $('.js-cancel-collect').on('click', function (e) {
+            utils.cancelCollect.call(self, $(this), e);
+        });
+    },
     initTab: function () {
         var self = this;
 
@@ -103,6 +114,7 @@ var I = {
                     data: data
                 });
                 self.initTab();
+                self.addEvents();
             },
             container: container
         });

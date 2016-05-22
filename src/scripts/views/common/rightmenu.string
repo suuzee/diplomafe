@@ -3,11 +3,10 @@
         <div class="ui small header">
             热门问题
         </div>
-        <div class="ui list">
-            <a class="item">Who is our user?</a>
-            <a class="item">Who is our user?</a>
-            <a class="item">Who is our user?</a>
-            <a class="item">Where is our office located?</a>
+        <div class="ui list js-hot-questions">
+            {{#questions}}
+            <a href="{{question_id}}" class="item">{{question_title}}</a>
+            {{/questions}}
         </div>
     </div>
     <div class="ui basic segment">

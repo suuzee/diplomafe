@@ -1,6 +1,7 @@
 <div class="ui pointing secondary menu js-myself-tab">
     <a class="active item" data-tab="question">提出的问题</a>
     <a class="item" data-tab="answer">回答的问题</a>
+    <a class="item" data-tab="collect">收藏的问题</a>
 </div>
 <div class="ui bottom active tab segment js-myself-question" data-tab="question">
     {{#myselfQuestions}}
@@ -19,6 +20,14 @@
         </div>
         <div class="ui tiny header">
             <div class="ui horizontal list">
+                <div class="item">
+                    {{#noCollect}}
+                    <div class="ui button js-collect" data-id="{{question_id}}">收藏</div>
+                    {{/noCollect}}
+                    {{#isCollect}}
+                    <div class="ui button js-cancel-collect" data-id="{{question_id}}">取消收藏</div>
+                    {{/isCollect}}
+                </div>
                 <div class="item">
                     {{question_date}}
                 </div>
@@ -60,6 +69,14 @@
         <div class="ui tiny header">
             <div class="ui horizontal list">
                 <div class="item">
+                    {{#noCollect}}
+                    <div class="ui button js-collect" data-id="{{question_id}}">收藏</div>
+                    {{/noCollect}}
+                    {{#isCollect}}
+                    <div class="ui button js-cancel-collect" data-id="{{question_id}}">取消收藏</div>
+                    {{/isCollect}}
+                </div>
+                <div class="item">
                     {{question_date}}
                 </div>
                 <div href="#" class="item">
@@ -81,4 +98,52 @@
         </div>
     </div>
     {{/myselfAnswers}}
+</div>
+<div class="ui bottom tab segment js-myself-collect" data-tab="collect">
+    {{#myselfCollects}}
+    <div class="item">
+        <div class="ui tiny header">
+            <img class="ui avatar image" src="{{user_avatar}}">
+            <div class="content">
+                <a href="/diploma/i/{{question_author}}" class="header">{{user_name}}</a>
+                <span class="user-detail">{{user_desc}}</span>
+                <div class="description">提出了问题：</div>
+            </div>
+        </div>
+        <div class="ui segment">
+            <a href="/diploma/question/{{question_id}}" class="ui header">{{question_title}}</a>
+            <p>{{{question_desc}}}</p>
+        </div>
+        <div class="ui tiny header">
+            <div class="ui horizontal list">
+                <div class="item">
+                    {{#noCollect}}
+                    <div class="ui button js-collect" data-id="{{question_id}}">收藏</div>
+                    {{/noCollect}}
+                    {{#isCollect}}
+                    <div class="ui button js-cancel-collect" data-id="{{question_id}}">取消收藏</div>
+                    {{/isCollect}}
+                </div>
+                <div class="item">
+                    {{question_date}}
+                </div>
+                <div href="#" class="item">
+                    <i class="unhide icon"></i>
+                    {{lookNum}}人查看
+                </div>
+                <div href="#" class="item">
+                    <i class="comment outline icon"></i>
+                    {{answerNum}}个回答
+                </div>
+                <div class="item tags">
+                    {{#question_tags}}
+                    <a href="/diploma/tag/{{tag_id}}" class="ui label tag">
+                        {{tag_name}}
+                    </a>
+                    {{/question_tags}}
+                </div>
+            </div>
+        </div>
+    </div>
+    {{/myselfCollects}}
 </div>

@@ -6,7 +6,7 @@ var qListStr = require("./tpl/questionlist.string");
 var utils = require("Utils/index");
 
 
-var Home = {
+var Tag = {
     addEvents: function () {
         var self = this;
 
@@ -35,13 +35,19 @@ var Home = {
         var self = this;
         utils.renderRMenu();
     },
-    renderQuestionList: function () {
+    renderQuestionListByTag: function () {
         var self = this,
-            container = '.js-qlist-container';
-
+            container = '.js-qlist-container',
+            tagId = utils.getPathParam();
+        self.storage = !!self.storage ? self.storage : {};
+        self.storage.tagId = tagId;
         utils.loadData({
-            url: '/diploma/question/getQuestions',
+            url: '/diploma/question/getQuestionsByTag',
+            data: {
+                tagId: tagId
+            },
             callback: function (data) {
+                document.title = data.tagName + '-知否';
                 utils.renderWidget({
                     container: container,
                     tpl: qListStr,
@@ -57,7 +63,7 @@ var Home = {
         self.renderIndex();
         self.renderHead();
         self.renderRmenu();
-        self.renderQuestionList();
+        self.renderQuestionListByTag();
     },
     render: function () {
         var self = this;
@@ -66,5 +72,5 @@ var Home = {
 };
 
 $(function () {
-    Home.render();
+    Tag.render();
 });
